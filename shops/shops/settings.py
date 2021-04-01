@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shop',
+        'NAME': 'testshop',
         'USER': 'postgres',
         'PASSWORD': '12345',
     }
@@ -125,6 +126,19 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Настройки Braintree.
+BRAINTREE_MERCHANT_ID = 'fm7wdw2hc7mwktpd' # ID продавца.
+BRAINTREE_PUBLIC_KEY = '9yq5p67nxgsnr3st' # Публичный ключ.
+BRAINTREE_PRIVATE_KEY = '15021ef585ba0261da71d13cae983a6c' # Секретный ключ.
+from braintree import Configuration, Environment
+Configuration.configure(
+ Environment.Sandbox,
+ BRAINTREE_MERCHANT_ID,
+ BRAINTREE_PUBLIC_KEY,
+ BRAINTREE_PRIVATE_KEY
+)

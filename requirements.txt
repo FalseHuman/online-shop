@@ -1,6 +1,9 @@
 # pip install -r ./requirements.txt
+#celery -A shops worker -l info
 Django==2.0.5
 Pillow==8.1.2
 psycopg2==2.8.6
 celery==4.1.0
 flower==0.9.2
+braintree==3.45.0
+WeasyPrint==0.42.3
