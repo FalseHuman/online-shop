@@ -1,12 +1,13 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% load static %}
-{% block title %}{% if category %}{{ category.name }} | Яндекс.Маркет на минималках{% else %}Яндекс.Маркет на минималках{% endif %}{% endblock %}
+{% block title %}{% if category %}{{ category.name }} | {% trans "Яндекс.Маркет на минималках" %}{% else %}{% trans "Яндекс.Маркет на минималках" %}{% endif %}{% endblock %}
 {% block content %}
  <div id="sidebar">
-    <h3>Категории</h3>
+    <h3>{% trans "Категории" %}</h3>
     <ul>
         <li {% if not category %}class="selected"{% endif %}>
-            <a href="{% url "shop:product_list" %}">Все</a>
+            <a href="{% url "shop:product_list" %}">{% trans "Все" %}</a>
     </li>
     {% for c in categories %}
         <li {% if category.slug == c.slug %}class="selected" {% endif %}>
@@ -16,7 +17,7 @@
     </ul>
  </div>
  <div id="main" class="product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}Все товары{% endif %}</h1>
+    <h1>{% if category %}{{ category.name }}{% else %}{% trans "Все товары" %}{% endif %}</h1>
     {% for product in products %}
     <div class="item">
         <a href="{{ product.get_absolute_url }}">

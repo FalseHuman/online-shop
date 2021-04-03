@@ -1,22 +1,31 @@
 {% extends "shop/base.html" %}
-{% block title %} Заказ {% endblock %}
+{% load i18n %}
+{% block title %} {% trans "Заказ" %} {% endblock %}
 {% block content %}
-    <h1>Заказ</h1>
+    <h1>{% trans "Заказ" %}</h1>
     <div class="order-info">
-        <h3>Ваш заказ</h3>
+        <h3>{% trans "Ваш заказ" %}</h3>
         <ul>
             {% for item in cart %}
-                <li>
-                    {{ item.quantity }}x {{ item.product.name }}
-                    <span>₽{{ item.total_price }}</span>
-                </li>
+            <li>
+                {{ item.quantity }}x {{ item.product.name }}
+                <span>₽{{ item.total_price|floatformat:"2" }}</span>
+            </li>
             {% endfor %}
-        </ul>
-        <p>Всего: ₽{{ cart.get_total_price }}</p>
+            {% if cart.coupon %}
+                <li>
+                    {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
+                         "{{ code }}" ({{ discount }}% off)
+                    {% endblocktrans %}
+                    <span>- ₽{{ cart.get_discount|floatformat:"2" }}</span>
+                </li>
+            {% endif %}
+           </ul>
+        <p>{% trans "Всего" %}: ₽{{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
     </div>
     <form action="." method="post" class="order-form">
         {{ form.as_p }}
-        <p><input type="submit" value="Оформить"></p>
+        <p><input type="submit" value="{% trans "Оформить" %}"></p>
         {% csrf_token %}
     </form>
 {% endblock %}

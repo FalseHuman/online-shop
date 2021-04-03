@@ -1,9 +1,10 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% block title %}
-Спасибо
+{% trans "Спасибо" %}
 {% endblock %}
 {% block content %}
-    <h1>Спасибо</h1>
-    <p>Ваш заказ был успешно выполнен. Ваш номер заказа
+    <h1>{% trans "Спасибо" %}</h1>
+    <p>{% trans  "Ваш заказ был успешно выполнен. Ваш номер заказа" %}
     <strong>{{ order.id }}</strong>.</p>
 {% endblock %}

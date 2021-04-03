@@ -43,7 +43,7 @@
   </tr>
   <tr>
     <th>Общая сумма</th>
-    <td>₽{{ order.get_total_cost }}</td>
+    <td>₽{{ order.get_total_cost|floatformat:"2" }}</td>
   </tr>
   <tr>
     <th>Статус</th>
@@ -74,7 +74,7 @@
         {% endfor %}
         <tr class="total">
           <td colspan="3">Итого</td>
-          <td class="num">₽{{ order.get_total_cost }}</td>
+          <td class="num">₽{{ order.get_total_cost|floatformat:"2" }}</td>
         </tr>
       </tbody>
     </table>
