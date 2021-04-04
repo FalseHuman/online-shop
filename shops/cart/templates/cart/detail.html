@@ -34,8 +34,8 @@
                 </form>
             </td>
             <td><a href="{% url "cart:cart_remove" product.id%}">{% trans "Удалить" %}</a></td>
-            <td class="num">₽{{ item.price }}</td>
-            <td class="num">₽{{ item.total_price }}</td>
+            <td class="num">{% trans  "₽" %}{{ item.price }}</td>
+            <td class="num">{% trans  "₽" %}{{ item.total_price }}</td>
         </tr>
         {% endwith %}
     {% endfor %}
@@ -43,7 +43,7 @@
     <tr class="subtotal">
         <td>{% trans "Промежуточный итог" %}</td>
         <td colspan="4"></td>
-        <td class="num">₽{{ cart.get_total_price|floatformat:"2" }}</td>
+        <td class="num">{% trans  "₽" %}{{ cart.get_total_price|floatformat:"2" }}</td>
     </tr>
     <tr>
     <td>
@@ -52,7 +52,7 @@
     </td>
     <td colspan="4"></td>
     <td class="num neg">
-    - ₽{{ cart.get_discount|floatformat:"2" }}
+    - {% trans  "₽" %}{{ cart.get_discount|floatformat:"2" }}
     </td>
     </tr>
     {% endif %}
@@ -60,7 +60,7 @@
         <td>{% trans "Всего" %}</td>
         <td colspan="4"></td>
         <td class="num">
-            ₽{{ cart.get_total_price_after_discount|floatformat:"2" }}
+            {% trans  "₽" %}{{ cart.get_total_price_after_discount|floatformat:"2" }}
     </td>
     </tr>
  </tbody>

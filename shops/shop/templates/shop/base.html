@@ -35,7 +35,7 @@
                     {% trans  "Ваша корзина" %}:
                         <a href="{% url "cart:cart_detail" %}">
                             {{ total_items }} {% trans "шт." %},
-                            ₽{{ cart.get_total_price }}
+                            {% trans  "₽"  %}{{ cart.get_total_price }}
                         </a>
                     {% else %}
                     {% trans  "Ваша корзина пуста" %}

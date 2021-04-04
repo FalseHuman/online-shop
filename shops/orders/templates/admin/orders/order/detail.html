@@ -1,8 +1,6 @@
 {% extends "admin/base_site.html" %}
+{% load i18n %}
 {% load static %}
-
-
-
 {% block title %}
   Order {{ order.id }} {{ block.super }}
 {% endblock %}
@@ -43,7 +41,7 @@
   </tr>
   <tr>
     <th>Общая сумма</th>
-    <td>₽{{ order.get_total_cost|floatformat:"2" }}</td>
+    <td>{% trans  "₽" %}{{ order.get_total_cost|floatformat:"2" }}</td>
   </tr>
   <tr>
     <th>Статус</th>
@@ -67,14 +65,14 @@
         {% for item in order.items.all %}
           <tr class="row{% cycle "1" "2" %}">
             <td>{{ item.product.name }}</td>
-            <td class="num">₽{{ item.price }}</td>
+            <td class="num">{% trans  "₽" %}{{ item.price }}</td>
             <td class="num">{{ item.quantity }}</td>
-            <td class="num">₽{{ item.get_cost }}</td>
+            <td class="num">{% trans  "₽" %}{{ item.get_cost }}</td>
           </tr>
         {% endfor %}
         <tr class="total">
           <td colspan="3">Итого</td>
-          <td class="num">₽{{ order.get_total_cost|floatformat:"2" }}</td>
+          <td class="num">{% trans  "₽" %}{{ order.get_total_cost|floatformat:"2" }}</td>
         </tr>
       </tbody>
     </table>

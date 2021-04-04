@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-03 14:45+0500\n"
+"POT-Creation-Date: 2021-04-04 14:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,24 +65,32 @@ msgstr ""
 msgid "Всего"
 msgstr ""
 
-#: cart/templates/cart/detail.html:68
+#: cart/templates/cart/detail.html:70
+msgid "People who bought this also bought"
+msgstr ""
+
+#: cart/templates/cart/detail.html:82
 msgid "Применить купон"
 msgstr ""
 
-#: cart/templates/cart/detail.html:71
+#: cart/templates/cart/detail.html:85
 msgid "Применить"
 msgstr ""
 
-#: cart/templates/cart/detail.html:75
+#: cart/templates/cart/detail.html:89
 msgid "Продолжить делать покупки"
 msgstr ""
 
-#: cart/templates/cart/detail.html:76
+#: cart/templates/cart/detail.html:90
 msgid "Заказать"
 msgstr ""
 
 #: coupons/forms.py:5
 msgid "Купон"
+msgstr ""
+
+#: orders/forms.py:7 orders/models.py:13
+msgid "Почтовый индекс"
 msgstr ""
 
 #: orders/models.py:9
@@ -95,10 +103,6 @@ msgstr ""
 
 #: orders/models.py:12
 msgid "Адрес"
-msgstr ""
-
-#: orders/models.py:13
-msgid "Почтовый индекс"
 msgstr ""
 
 #: orders/models.py:14
@@ -135,19 +139,19 @@ msgstr ""
 msgid "Ваш заказ был успешно выполнен. Ваш номер заказа"
 msgstr ""
 
-#: payment/templates/payment/canceled.html:3
+#: payment/templates/payment/canceled.html:4
 msgid "Ваш платеж не был обработан"
 msgstr ""
 
-#: payment/templates/payment/canceled.html:4
+#: payment/templates/payment/canceled.html:5
 msgid "Возникла проблема с обработкой вашего платежа."
 msgstr ""
 
-#: payment/templates/payment/done.html:3
+#: payment/templates/payment/done.html:4
 msgid "Ваш платеж прошел успешно"
 msgstr ""
 
-#: payment/templates/payment/done.html:4
+#: payment/templates/payment/done.html:5
 msgid "Ваш платеж был успешно обработан"
 msgstr ""
 
@@ -185,12 +189,20 @@ msgstr ""
 msgid "шт."
 msgstr ""
 
+#: shop/templates/shop/base.html:38
+msgid "{% trans  "₽" %}"
+msgstr ""
+
 #: shop/templates/shop/base.html:41
 msgid "Ваша корзина пуста"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:16
 msgid "Добавить в корзину"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:22
+msgid "Люди, которые купили это, тоже купили"
 msgstr ""
 
 #: shop/templates/shop/product/list.html:7
@@ -205,10 +217,10 @@ msgstr ""
 msgid "Все товары"
 msgstr ""
 
-#: shops/settings.py:120
+#: shops/settings.py:122
 msgid "Russian"
 msgstr ""
 
-#: shops/settings.py:121
+#: shops/settings.py:123
 msgid "English"
 msgstr ""

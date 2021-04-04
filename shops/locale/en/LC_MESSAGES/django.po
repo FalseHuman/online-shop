@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-03 14:45+0500\n"
-"PO-Revision-Date: 2021-04-03 10:52+0000\n"
-"Last-Translator: b'  <rin-k@yandex.ru>'\n"
+"POT-Creation-Date: 2021-04-04 14:21+0500\n"
+"PO-Revision-Date: 2021-04-04 09:23+0000\n"
+"Last-Translator: b'  <test@test.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -64,25 +64,33 @@ msgstr "coupon"
 msgid "Всего"
 msgstr "Total"
 
-#: cart/templates/cart/detail.html:68
+#: cart/templates/cart/detail.html:70
+msgid "People who bought this also bought"
+msgstr ""
+
+#: cart/templates/cart/detail.html:82
 msgid "Применить купон"
 msgstr "Apply coupon"
 
-#: cart/templates/cart/detail.html:71
+#: cart/templates/cart/detail.html:85
 msgid "Применить"
 msgstr "Apply"
 
-#: cart/templates/cart/detail.html:75
+#: cart/templates/cart/detail.html:89
 msgid "Продолжить делать покупки"
 msgstr "Continue shopping"
 
-#: cart/templates/cart/detail.html:76
+#: cart/templates/cart/detail.html:90
 msgid "Заказать"
 msgstr "To order"
 
 #: coupons/forms.py:5
 msgid "Купон"
 msgstr "Coupon"
+
+#: orders/forms.py:7 orders/models.py:13
+msgid "Почтовый индекс"
+msgstr "Postal Code"
 
 #: orders/models.py:9
 msgid "Имя"
@@ -95,10 +103,6 @@ msgstr "Last name"
 #: orders/models.py:12
 msgid "Адрес"
 msgstr "Address"
-
-#: orders/models.py:13
-msgid "Почтовый индекс"
-msgstr "Postal Code"
 
 #: orders/models.py:14
 msgid "Город"
@@ -136,19 +140,19 @@ msgstr "Thank you"
 msgid "Ваш заказ был успешно выполнен. Ваш номер заказа"
 msgstr "Your order was successfully completed. Your order number"
 
-#: payment/templates/payment/canceled.html:3
+#: payment/templates/payment/canceled.html:4
 msgid "Ваш платеж не был обработан"
 msgstr "Your payment was not processed"
 
-#: payment/templates/payment/canceled.html:4
+#: payment/templates/payment/canceled.html:5
 msgid "Возникла проблема с обработкой вашего платежа."
 msgstr "There is a problem with the processing of your payment."
 
-#: payment/templates/payment/done.html:3
+#: payment/templates/payment/done.html:4
 msgid "Ваш платеж прошел успешно"
 msgstr "Your payment was successful"
 
-#: payment/templates/payment/done.html:4
+#: payment/templates/payment/done.html:5
 msgid "Ваш платеж был успешно обработан"
 msgstr "Your payment was successfully processed"
 
@@ -186,14 +190,21 @@ msgstr "Your cart"
 msgid "шт."
 msgstr "pie."
 
+#: shop/templates/shop/base.html:38
+msgid "{% trans  "₽" %}"
+msgstr "$"
+
 #: shop/templates/shop/base.html:41
 msgid "Ваша корзина пуста"
 msgstr "Your shopping cart is empty"
 
 #: shop/templates/shop/product/detail.html:16
-#| msgid "Ваша корзина"
 msgid "Добавить в корзину"
 msgstr "Your cart"
+
+#: shop/templates/shop/product/detail.html:22
+msgid "Люди, которые купили это, тоже купили"
+msgstr ""
 
 #: shop/templates/shop/product/list.html:7
 msgid "Категории"
@@ -207,11 +218,11 @@ msgstr "All"
 msgid "Все товары"
 msgstr "All product"
 
-#: shops/settings.py:120
+#: shops/settings.py:122
 msgid "Russian"
 msgstr "Russian"
 
-#: shops/settings.py:121
+#: shops/settings.py:123
 msgid "English"
 msgstr "English"
 
